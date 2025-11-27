@@ -45,3 +45,5 @@ fun HomeScreen(
     }
 }
 
+@Composable
+fun BodyHome(){}

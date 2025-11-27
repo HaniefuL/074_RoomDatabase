@@ -68,3 +68,8 @@ fun BodyHome(
     }
 }
 
+@Composable
+fun ListSiswa(
+    itemSiswa : List<Siswa>,
+    modifier: Modifier=Modifier
+)

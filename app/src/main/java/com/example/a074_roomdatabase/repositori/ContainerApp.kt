@@ -1,16 +1,28 @@
 package com.example.a074_roomdatabase.repositori
 
+import android.app.Application
 import android.content.Context
-import com.example.myroomsatu.room.DatabaseSiswa // Asumsi DatabaseSiswa ada di package room
+import com.example.a074_roomdatabase.room.DatabaseSiswa
 
 interface ContainerApp {
-    val repositoriSiswa: RepositoriSiswa
+    val repositoriSiswa : RepositoriSiswa
 }
 
-class ContainerDataApp(private val context: Context) : ContainerApp {
+class ContainerDataApp(private val context: Context):
+    ContainerApp {
     override val repositoriSiswa: RepositoriSiswa by lazy {
-        OfflineRepositoriSiswa( // Pastikan class ini sudah Anda buat
-            siswaDao = DatabaseSiswa.getDatabase(context).siswaDao()
+        OfflineRepositoriSiswa(
+            DatabaseSiswa.getDatabase(context).siswaDao()
         )
+    }
+}
+
+class AplikasiSiswa : Application() {
+    /* AppController instance digunakan oleh kelas kelas lainnya untuk mendapatkan dependensi*/
+    lateinit var container: ContainerApp
+
+    override fun onCreate() {
+        super.onCreate()
+        container = ContainerDataApp(this)
     }
 }

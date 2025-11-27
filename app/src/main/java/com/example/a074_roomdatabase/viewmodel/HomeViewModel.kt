@@ -1,4 +1,4 @@
-package com.example.a074_roomdatabase.view.viewmodel
+package com.example.a074_roomdatabase.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

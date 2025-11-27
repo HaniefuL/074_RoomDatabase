@@ -1,7 +1,7 @@
 package com.example.a074_roomdatabase.repositori
 
-import com.example.myroomsatu.data.Siswa
-import com.example.myroomsatu.room.SiswaDao
+import com.example.a074_roomdatabase.room.Siswa
+import com.example.a074_roomdatabase.room.SiswaDao
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoriSiswa {

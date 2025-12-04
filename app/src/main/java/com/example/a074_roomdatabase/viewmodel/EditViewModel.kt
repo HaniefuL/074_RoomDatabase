@@ -35,4 +35,10 @@ class EditViewModel (
                     telpon.isNotBlank()
         }
     }
+
+    suspend fun updateSiswa() {
+        if (validasiInput(uiStateSiswa.detailSiswa)) {
+            repositoriSiswa.updateSiswa(uiStateSiswa.detailSiswa.toSiswa())
+        }
+    }
 }
